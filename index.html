@@ -68,6 +68,9 @@
 
   <script>
   window.addEventListener('df-messenger-loaded', function (event) {
+    window.sessionStorage.clear();
+    window.localStorage.clear();
+    
     const messenger = document.querySelector('df-messenger');
     const iframe = messenger.shadowRoot.querySelector('iframe');
     
