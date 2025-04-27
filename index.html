@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>European Data Portal Virtual Assistant Prototype</title>
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</head>
+<body>
+  <h1>This a demo prototype for a virtual assistant. The assistant is made for accesssing the European Data Porta.l</h1>
+
+  <df-messenger
+    location="europe-west3"
+    project-id="dataeuropachatbot"
+    agent-id="36941813-568f-4fc2-aeeb-fee20630e752"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat-bubble chat-title="DataEuropaAgent"></df-messenger-chat-bubble>
+  </df-messenger>
+
+  <style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+    }
+  </style>
+</body>
+</html>
+
