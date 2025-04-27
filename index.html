@@ -65,5 +65,20 @@
     max-query-length="-1">
     <df-messenger-chat-bubble chat-title="DataEuropaAgent"></df-messenger-chat-bubble>
   </df-messenger>
+
+  <script>
+  window.addEventListener('df-messenger-loaded', function (event) {
+    const messenger = document.querySelector('df-messenger');
+    const iframe = messenger.shadowRoot.querySelector('iframe');
+    
+    iframe.onload = () => {
+      iframe.contentWindow.postMessage(
+        { event: 'df-messenger-send-message', message: 'Hello' },
+        '*'
+      );
+    };
+  });
+</script>
+
 </body>
 </html>
