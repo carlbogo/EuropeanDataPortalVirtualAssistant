@@ -3,41 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>European data portal Virtual Assistant</title>
+  <title>DataEuropa Virtual Assistant Prototype</title>
   <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
   <style>
     body {
       background-color: #f3f6fc;
+      font-family: 'Google Sans', Arial, sans-serif;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-      overflow: hidden;
-      font-family: 'Google Sans', Arial, sans-serif;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      max-width: 600px;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
     }
     df-messenger {
+      z-index: 999;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      margin: 0;
+      bottom: 16px;
+      right: 16px;
       --df-messenger-font-color: #000;
       --df-messenger-font-family: Google Sans;
       --df-messenger-chat-background: #f3f6fc;
       --df-messenger-message-user-background: #d3e3fd;
       --df-messenger-message-bot-background: #ffffff;
-      --df-messenger-chat-window-height: 100vh;
-      --df-messenger-chat-window-width: 100vw;
-      --df-messenger-send-icon: #1a73e8;
-      z-index: 999;
-    }
-    df-messenger-chat-bubble {
-      display: none;
     }
   </style>
 </head>
 <body>
+  <h1>Welcome to the DataEuropa Virtual Assistant Prototype!</h1>
+  <p>This prototype is designed to help you interact with the European Data Portal via a virtual assistant.</p>
+  <p>Try asking something like:</p>
+  <p><em>"Find datasets about Estonia"</em> or <em>"Show me available CSV files for 2024"</em>.</p>
+  <p>After testing, please leave your feedback <a href="https://forms.gle/yourformlink" target="_blank">here</a>.</p>
+
   <df-messenger
     location="europe-west3"
     project-id="dataeuropachatbot"
