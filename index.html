@@ -72,6 +72,11 @@
     window.addEventListener('df-messenger-loaded', function (event) {
       window.sessionStorage.clear();
       window.localStorage.clear();
+
+      const dfMessenger = document.querySelector('df-messenger');
+dfMessenger.addEventListener('onchatopen', () => {
+dfMessenger.renderCustomText('SHOW_SERVICE_PAGE'); // Trigger custom event
+});
       
       const messenger = document.querySelector('df-messenger');
       const iframe = messenger.shadowRoot.querySelector('iframe');
