@@ -68,27 +68,23 @@
     <df-messenger-chat-bubble chat-title="DataEuropaAgent"></df-messenger-chat-bubble>
   </df-messenger>
 
-  <script>
-    window.addEventListener('df-messenger-loaded', function (event) {
-      window.sessionStorage.clear();
-      window.localStorage.clear();
+<script>
+  window.addEventListener('df-messenger-loaded', function () {
+    window.sessionStorage.clear();
+    window.localStorage.clear();
 
-      const dfMessenger = document.querySelector('df-messenger');
-dfMessenger.addEventListener('onchatopen', () => {
-dfMessenger.renderCustomText('SHOW_SERVICE_PAGE'); // Trigger custom event
-});
-      
-      const messenger = document.querySelector('df-messenger');
+    const messenger = document.querySelector('df-messenger');
+
+    messenger.addEventListener('df-messenger-on-open', () => {
       const iframe = messenger.shadowRoot.querySelector('iframe');
-      
-      iframe.onload = () => {
-        iframe.contentWindow.postMessage(
-          { event: 'df-event', eventName: 'SHOW_SERVICE_PAGE' },
-          '*'
-        );
-      };
+      iframe.contentWindow.postMessage(
+        { event: 'df-event', eventName: 'SHOW_SERVICE_PAGE' },
+        '*'
+      );
     });
-  </script>
+  });
+</script>
+
 </body>
 
 </html>
