@@ -51,12 +51,12 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to the DataEuropa Virtual Assistant Prototype!</h1>
+  <h1>Virtual Assistant for the European Data Portal (Demo)</h1>
   <p>This prototype is designed to help you interact with the European Data Portal via a virtual assistant.</p>
   <p>Try asking something like:</p>
-  <p><em>"Find datasets about Estonia"</em> or <em>"Show me available CSV files for 2024"</em>.</p>
-  <p>👉 To start, please click on the chat icon in the bottom right corner!</p>
-  <p>After testing, please leave your feedback <a href="https://forms.gle/yourformlink" target="_blank">here</a>.</p>
+  <p><em>"Find datasets about Estonia"</em></p>
+  <p>To start, please click on the chat icon in the bottom right corner!</p>
+  <p>After testing, please leave your feedback <a href="https://forms.office.com/e/sLa0TFteuj" target="_blank">here</a>.</p>
 
   <df-messenger
     location="europe-west3"
@@ -77,7 +77,7 @@
     
     iframe.onload = () => {
       iframe.contentWindow.postMessage(
-        { event: 'df-messenger-send-message', message: 'Hello' },
+        { event: 'df-messenger-send-message', message: 'hi' },
         '*'
       );
     };
