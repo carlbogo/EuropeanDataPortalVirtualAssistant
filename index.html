@@ -69,20 +69,20 @@
   </df-messenger>
 
   <script>
-  window.addEventListener('df-messenger-loaded', function (event) {
-    window.sessionStorage.clear();
-    window.localStorage.clear();
-    
-    const messenger = document.querySelector('df-messenger');
-    const iframe = messenger.shadowRoot.querySelector('iframe');
-    
-    iframe.onload = () => {
-      iframe.contentWindow.postMessage(
-        { event: 'df-messenger-send-message', message: 'hi' },
-        '*'
-      );
-    };
-  });
+    window.addEventListener('df-messenger-loaded', function (event) {
+      window.sessionStorage.clear();
+      window.localStorage.clear();
+      
+      const messenger = document.querySelector('df-messenger');
+      const iframe = messenger.shadowRoot.querySelector('iframe');
+      
+      iframe.onload = () => {
+        iframe.contentWindow.postMessage(
+          { event: 'df-event', eventName: 'SHOW_SERVICE_PAGE' },
+          '*'
+        );
+      };
+    });
   </script>
 </body>
 
