@@ -8,64 +8,96 @@
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
   <style>
     body {
-      background-color: #f3f6fc;
-      font-family: 'Google Sans', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      color: #333;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      max-width: 600px;
-    }
-    a {
-      color: #1a73e8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #888;
-      padding: 1rem;
-    }
-    df-messenger {
-      z-index: 999;
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
-      --df-messenger-font-color: #000;
-      --df-messenger-font-family: Google Sans;
-      --df-messenger-chat-background: #f3f6fc;
-      --df-messenger-message-user-background: #d3e3fd;
-      --df-messenger-message-bot-background: #ffffff;
-    }
+  background-color: #f3f6fc;
+  font-family: 'Google Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+}
 
-    @media (max-width: 600px) {
-      df-messenger {
-        bottom: 80px; /* jätab ruumi footerile */
-      }
-    }
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  margin: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a237e;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0b59d6;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+df-messenger {
+  z-index: 999;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  --df-messenger-font-color: #000;
+  --df-messenger-font-family: Google Sans;
+  --df-messenger-chat-background: #f3f6fc;
+  --df-messenger-message-user-background: #d3e3fd;
+  --df-messenger-message-bot-background: #ffffff;
+}
+
+@media (max-width: 600px) {
+  df-messenger {
+    bottom: 80px;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -76,7 +108,7 @@
     <p>When searching for datasets, try asking something like:</p>
     <p><em>"Find datasets about Estonia"</em></p>
     <p><em>(NB! If the search does not load the first time, try to search again)</em></p>
-    <p>Link to the survey <a href="https://forms.office.com/e/sLa0TFteuj" target="_blank">here</a>.</p>
+    <p>Please leave your feedback <a href="https://forms.cloud.microsoft/e/KGSS7PR6YS" target="_blank">here</a>.</p>
   </main>
 
   <footer>
