@@ -131,7 +131,7 @@ df-messenger {
     project-id="dataeuropachatbot"
     agent-id="36941813-568f-4fc2-aeeb-fee20630e752"
     language-code="en"
-    max-query-length="-1">
+    max-query-length="-1"
     wait-open="true">
     <df-messenger-chat-bubble chat-title="Oggy"></df-messenger-chat-bubble>
   </df-messenger>
@@ -139,20 +139,22 @@ df-messenger {
   <script>
   window.addEventListener('df-messenger-loaded', function () {
     const messenger = document.querySelector('df-messenger');
-    setTimeout(() => {
+
+    messenger.addEventListener('df-messenger-on-open', () => {
       const iframe = messenger.shadowRoot.querySelector('iframe');
       if (iframe) {
         iframe.contentWindow.postMessage(
           {
-            event: 'df-event',
-            eventName: 'SHOW_SERVICE_PAGE'
+            event: 'df-messenger-send-message',
+            message: 'hi'
           },
           '*'
         );
       }
-    }, 500);
+    });
   });
 </script>
+
 
   </script>
 </body>
