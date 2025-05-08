@@ -141,13 +141,34 @@ df-messenger {
     <df-messenger-chat-bubble chat-title="Oggy"></df-messenger-chat-bubble>
   </df-messenger>
 
-  <script>
+<script>
   window.addEventListener('df-messenger-loaded', function () {
-    const messenger = document.querySelector('df-messenger');
+    const dfMessenger = document.querySelector('df-messenger');
+    console.log(dfMessenger);
 
-    messenger.addEventListener('df-messenger-on-open', () => {
-      const iframe = messenger.shadowRoot.querySelector('iframe');
+    dfMessenger.addEventListener('df-messenger-on-open', () => {
+      const iframe = dfMessenger.shadowRoot.querySelector('iframe');
+
       if (iframe) {
+        console.log(iframe);
+        iframe.onload = () => {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const style = document.createElement('style');
+          style.textContent = `
+            html, body {
+              width: 100% !important;
+              height: 100% !important;
+            }
+            .chat-wrapper {
+              width: 100% !important;
+              height: 600px !important;
+              max-height: 90vh !important;
+            }
+          `;
+          iframeDoc.head.appendChild(style);
+        };
+
+        // Trigger welcome event
         iframe.contentWindow.postMessage(
           {
             event: 'df-messenger-send-message',
@@ -159,6 +180,7 @@ df-messenger {
     });
   });
 </script>
+
 
 
   </script>
