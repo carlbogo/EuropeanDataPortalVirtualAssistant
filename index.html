@@ -136,20 +136,23 @@ df-messenger {
   </df-messenger>
 
   <script>
-    window.addEventListener('df-messenger-loaded', function () {
-      window.sessionStorage.clear();
-      window.localStorage.clear();
-
-      const messenger = document.querySelector('df-messenger');
-
-      messenger.addEventListener('df-messenger-on-open', () => {
-        const iframe = messenger.shadowRoot.querySelector('iframe');
+  window.addEventListener('df-messenger-loaded', function () {
+    const messenger = document.querySelector('df-messenger');
+    setTimeout(() => {
+      const iframe = messenger.shadowRoot.querySelector('iframe');
+      if (iframe) {
         iframe.contentWindow.postMessage(
-          { event: 'df-event', eventName: 'SHOW_SERVICE_PAGE' },
+          {
+            event: 'df-event',
+            eventName: 'SHOW_SERVICE_PAGE'
+          },
           '*'
         );
-      });
-    });
+      }
+    }, 500);
+  });
+</script>
+
   </script>
 </body>
 </html>
