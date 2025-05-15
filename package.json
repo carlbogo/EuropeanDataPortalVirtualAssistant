@@ -1,0 +1,18 @@
+{
+  "name": "data-europa-api",
+  "version": "1.0.0",
+  "description": "Google Cloud Function for querying the European Data Portal SPARQL endpoint",
+  "main": "indexWebhook.js",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "axios": "^1.5.0",
+    "openai": "^3.2.1",
+    "papaparse": "^5.4.1"
+  },
+  "scripts": {
+    "start": "functions-framework --target=OGDHttp"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
