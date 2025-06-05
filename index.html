@@ -97,18 +97,20 @@ df-messenger {
 
 @media (max-width: 600px) {
   df-messenger {
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100% !important;
-    max-width: 100% !important;
-    --df-messenger-min-width: 100% !important;
-    --df-messenger-max-width: 100% !important;
-    --df-messenger-min-height: 100vh;
-    --df-messenger-max-height: 100vh;
-    border-radius: 0 !important;
+    bottom: 16px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 90% !important;
+    max-width: 90% !important;
+    --df-messenger-min-width: 320px;
+    --df-messenger-max-width: 400px;
+    --df-messenger-min-height: 60px;
+    --df-messenger-max-height: 600px;
+    border-radius: 12px !important;
   }
 }
+
   </style>
 </head>
 <body>
